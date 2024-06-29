@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alert.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='receptionist.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="">
+
+    <title>reception | apollo</title>
+    <link rel="icon" type="image/x-icon" href="/static/resources/favicon.svg">
+    <link rel="preload" as="image" href="/static/resources/body9.svg" />
+</head>
+<body>
+{% for message in get_flashed_messages() %}
+        <div id="notif_alert" class="alert alert-primary alert-dismissible fade show fixed-top" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+    {% endfor %}
+
+
+
+<div id="tempo" class="fluid-container fixed-top">
+
+  <nav class="navbar navbar-expand-md justify-content-center">
+
+    <a href="{{ url_for('views.home') }}" class="navbar-brand m-2">
+        <img id="home_icon" src="/static/resources/apollo_logo.svg" alt="">
+    </a>
+
+    <span class="mt-2 mr-2 mb-2" style="pointer-events: none; font-size: 12px; text-align: left;"><b>reception</b> <br> department</span>
+
+    <ul class="navbar-nav mx-auto m-0">
+    </ul>
+
+    <button class="navbar-toggler ms-auto m-2" type="button" data-toggle="collapse" data-target="#mynav">
+      <img style="width: 30px;" src="/static/resources/list.svg" alt="">
+    </button>
+
+    <div class="collapse navbar-collapse " id="mynav">
+      <ul class="navbar-nav mx-auto">    
+        <li class="nav-item m-2">
+          <a id="active_page" class="nav-link" href="#">generate bill</a>
+      </li>
+  
+          <li class="nav-item m-2">
+            <a id="optionlink" class="nav-link" href="{{ url_for('views.doctor') }}">doctor availability</a>
+        </li>
+  
+          <li class="nav-item m-2">
+            <a id="optionlink" class="nav-link" href="{{ url_for('views.appointment') }}">appointment records</a>
+        </li>
+  
+  
+          <li class="nav-item m-2">
+            <a id="optionlink"  class="nav-link" href="{{ url_for('views.reception') }}">patient records</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item m-2">
+          <a id="logout_button" class="nav-link" href="{{ url_for('auth.logout') }}">log out</a>
+          
+        </li>
+      </ul>
+    </div>
+</nav>
+
+</div>
+
+
+<div style="margin: 3%;" class="fluid-container">
+  <div class="row">
+      <div class="col-md-10">
+          <div class="box">
+            <div class="table-responsive">
+
+              <table class="table table-striped table-borderless table-hover">
+                <thead>
+                  <tr>
+                    <th id="colored_col" scope="col">medical record id</th>
+                    <th id="colored_col" scope="col">patient name</th>
+                    <th id="colored_col" scope="col">doctor name</th>
+                    <th id="colored_col" scope="col">date of consultation</th>
+                    <th  id="colored_col"scope="col">actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in data %}
+                  <tr>
+                      <th scope="row">{{ data.id }}</th>
+                      <td>{{ data.patient_name }}</td>
+                      <td>{{ data.doctor_name }}</td>
+                      <td>{{ data.record_timestamp }}</td>
+                      <td>
+                        <a id="action_button" class="btn btn-primary" href="" data-toggle="modal" data-target="#modaledit{{data.id}}">
+                          <img style="width: 15px; margin-bottom: 3px; margin-right: 3px;" src="/static/resources/receipt.svg" alt="">
+                          generate bill</a>
+                      </td>
+                  </tr>
+          
+                  <div style="text-align: left;" id="modaledit{{data.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div style="padding-left: 5%; padding-right: 5%;" class="modal-content">
+                            <div class="modal-header">
+                                <h5 style="font-weight: bold;" class="modal-title">billing system</h5>    
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                            <div class="modal-body">
+                                <form action="{{ url_for('views.printBill') }}" method="POST">
+                                    <input type="hidden" name="id" value="{{data.id}}">
+                                    <div class="form-group">
+                                      <label for = patient_name>patient name:</label> <br>
+                                      <input style="background-color: rgba(128, 128, 128, 0.355);" value="{{data.patient_name}}" type="text" name="patient_name" id="patient_name" readonly>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for = doctor_name>doctor name:</label> <br>
+                                        <input style="background-color: rgba(128, 128, 128, 0.355);" value="{{data.doctor_name}}" type="text" name="doctor_name"  id="doctor_name" readonly>
+                                    </div>
+          
+                                    <br>
+          
+                                    <div class="form-group">
+                                        <label for = prescription>prescription:</label> <br>
+                                        <textarea style="background-color: rgba(128, 128, 128, 0.355);" value="{{ data.prescription }}"  id="prescription" name="prescription" rows="3"readonly>{{ data.prescription }}</textarea>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for = medicalTest>medical test:</label>
+                                        <input style="background-color: rgba(128, 128, 128, 0.355);" value="{{data.medical_test}}" type="text" name="medicalTest"  id="medicalTest" readonly>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for = medicalFees>total amount (AED):</label> <br>
+                                        <!-- <textarea class="form-control" id="medicalFees" name="medicalFees" rows="3"></textarea> -->
+                                        <input type="text" id="medicalFees" name="medicalFees">
+                                    </div>
+                                    <br>
+                                    <div style="text-align: center;">
+                                      <button id="save_button" type="submit">
+                                        <img style="width: 15px; margin-bottom: 3px; margin-right: 3px;" src="/static/resources/check-circle.svg" alt="">
+                                        confirm</button>
+                                    </div>
+                                    
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                  {% endfor %}
+                </tbody>
+            </table>
+          
+          
+            </div>
+          </div>
+      </div>
+
+      <div id="record_menu" class="col-md-2">
+          <div class="box">
+            <form class="form-inline" action="{{ url_for('views.search_patient_bill') }}" method="POST">
+              <span style="font-size: 12px; padding-left: 5px;">patient name:</span>
+              <input id="authenticate_field" type="text" name="patient_medical_record" id="patient_medical_record" required>
+              <button id="authenticate_button" type="submit">
+                <img style="width: 15px; margin-bottom: 3px; margin-right: 3px;" src="/static/resources/search.svg" alt="">
+                search</button>
+            </form>
+          
+            <a style="display: block;" id="authenticate_button" href="{{ url_for('views.generate_bill') }}">
+              <img style="width: 15px; margin-bottom: 3px; margin-right: 3px;" src="/static/resources/stars.svg" alt="">
+              clear</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div id="bottom_menu" class="d-flex flex-row fixed-bottom justify-content-between">
+  <li>
+    <form class="form-inline" action="{{ url_for('views.search_patient_bill') }}" method="POST">
+      <input id="mini_field" type="text" name="patient_medical_record" id="patient_medical_record" placeholder="patient name" required>
+      <span id="invis_space">-</span>
+      <button id="mini_button" type="submit">
+        <img style="width: 30px;" src="/static/resources/search.svg" alt=""></button>
+    </form>
+  </li>
+
+  <li>
+    <a style="display: block;" id="mini_button" href="{{ url_for('views.generate_bill') }}">
+      <img style="width: 30px;" src="/static/resources/stars.svg" alt=""></a>
+    </li>
+  </div>
+
+
+
+
+  
+    
+  
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

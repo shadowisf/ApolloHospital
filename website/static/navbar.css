@@ -1,0 +1,108 @@
+.navbar {
+    align-items: center;
+    /*background-color: #98deff; */
+    border-radius: 0px;
+    /* margin: 20px 12% 0px 12%; */
+    /* margin-bottom: 1%; */
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+    
+
+    /* background: url(resources/body9.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+}
+
+#tempo, #tempo_alt {
+    padding-top: 50px;
+
+    background: url(resources/body9.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+    background-position: center center;
+
+    z-index: 500;
+}
+
+#home_icon {
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-nav a {
+
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+}
+
+.navbar-nav a:hover {
+    color: black;
+    background-color: #5D9CD5;
+}
+
+#active_page {
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 0px;
+    pointer-events: none;
+    border-bottom: 3px solid black;
+}
+
+#active_page_invis {
+    pointer-events: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0px;
+}
+
+.navbar-nav button {
+    padding: 8.4px;
+    color: black;
+    background: transparent;
+    border-radius: 15px;
+    text-decoration: none;
+    border: #5D9CD5 solid;
+    transition: background 0s linear;
+}
+
+.navbar-nav button:hover {
+    color: black;
+    background-color: #5D9CD5;
+}
+
+#login_button {
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+    border: #5D9CD5 solid;
+}
+
+#login_button:hover {
+    color: black;
+    background-color: #5D9CD5;
+}
+
+#optionlink {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#logout_button {
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+    border: #5D9CD5 solid;
+}

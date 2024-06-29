@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=League+Gothic&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,400&display=swap');
+
+* {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    background: url(/static/resources/body9.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    overscroll-behavior: none;
+
+    background-size: cover;
+    background-position: center center;
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.301);
+    text-align: center;
+}
+
+#action_button {
+    padding: 3px 10px 3px 10px;
+    font-size: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+    border: none;
+}
+
+#action_button:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #5D9CD5;
+}
+
+#colored_col {
+    background-color:#5E9CD5;
+}
+
+#add_record_button {
+    border-radius: 15px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: #5D9CD5 solid 3px;
+    transition: background 0s linear;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+}
+
+#add_record_button:hover {
+    background-color:#5D9CD5;
+    color: black;
+}
+
+.modal-body input[type="text"], textarea[name="address"], input[type="date"], select[name="gender"], input[name="email"], input[name="dob"], select[name="doctor_name"], input[type="time"], select[id="day"], select[id="patient_name"], textarea[name="prescription"] {
+        border-radius: 15px;
+        border: black solid;
+        padding: 13px;
+        width: 100%;
+        -webkit-appearance: none;
+}
+
+.modal-body label {
+    text-align:left;
+    padding-left: 13px;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+#save_button {
+    text-decoration: none;
+    border: #5D9CD5 solid 3px;
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    transition: background 0s linear;
+    font-weight: bold;
+    text-align: center;
+}
+
+#save_button:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #5D9CD5;
+}
+
+#authenticate_button {
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    border: #5D9CD5 solid 3px;
+    margin-top: 5%;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+#authenticate_button:hover, #mini_button:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #5D9CD5;
+    
+}
+
+#authenticate_field {
+    border-radius: 15px;
+    border: black solid 3px;
+    padding: 13px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+select option:disabled {
+    display: none;
+}
+
+select:invalid {
+    color: gray;
+}
+
+#invis_space {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#bottom_menu {
+    padding: 3%;
+    background: url(resources/body9.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+    background-position: center center;
+
+    opacity: 0;
+    list-style: none;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+#record_menu {
+    position: fixed;
+    left: 82%;
+}
+
+#mini_button {
+    background-color: white;
+    border-radius: 15px;
+    border: #5D9CD5 solid 3px;
+    color: black;
+    padding: 10px;
+}
+
+#mini_field {
+    border-radius: 15px;
+    border: black solid 3px;
+    padding: 13px;
+    width: 150px;
+    -webkit-appearance: none;
+}
+
+@media screen and (max-width: 767.5px) {
+    #record_menu {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    #bottom_menu {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+    body {
+        padding-top: 20vh !important;
+        padding-bottom: 20vh !important;
+    }
+
+    .table {
+        zoom: 0.9;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.50) {
+    body {
+        padding-top: 25vh !important;
+        padding-bottom: 25vh !important;
+    }
+
+    .table {
+        zoom: 0.7;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.75) {
+    body {
+        padding-top: 30vh !important;
+        padding-bottom: 30vh !important;
+    }
+
+    .table {
+        zoom: 0.6;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 2) and (max-width: 1440px) {
+    body {
+        padding-top: 20vh !important;
+        padding-bottom: 20vh !important;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 2) and (max-width: 1280px) {
+    body {
+        padding-top: 20vh !important;
+        padding-bottom: 20vh !important;
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 3) {
+    body {
+        padding-top: 20vh !important;
+        padding-bottom: 20vh !important;
+    }
+}

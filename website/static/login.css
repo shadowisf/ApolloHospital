@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=League+Gothic&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,400&display=swap');
+
+* {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    background: url(/static/resources/body9.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overscroll-behavior: none;
+    padding-bottom: 50px;
+
+    background-size: cover;
+    background-position: center center;
+}
+
+.container h1 {
+    text-align: center;
+    margin-top: 2%;
+    font-size: 450%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0px #5D9CD5;
+}
+
+#email_ad {
+    margin-left: 25px;
+}
+
+.container {
+    text-align: center;
+}
+
+.container label {
+    padding-right: 170px;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.click_here a {
+    color: black;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+}
+
+.click_here a:hover {
+    color: black;
+    text-decoration: none;
+    background-color: #5E9CD5;
+}
+
+.log_in input {
+    border:#5D9CD5 solid 3px;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0s linear;
+}
+
+.log_in input:hover {
+    background-color: #5E9CD5;
+}
+
+input[id="username"], input[id="email"], input[id="password"], select[name="user_type"] {
+    border-radius: 15px;
+    -webkit-appearance: none;
+    padding: 10px;
+    width: 250px;
+    border: black solid;
+
+}
+
+.form {
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+    border: black solid;
+}

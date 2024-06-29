@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=League+Gothic&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,400&display=swap');
+
+* {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    overflow: hidden;
+    background-color: white;
+    background: url(/static/resources/body9.svg);
+    /*background-color: #d6f3ff; */
+    /*background: linear-gradient(white, #98deff); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overscroll-behavior: none;
+    /*#D3EFFA */
+    padding-top: 16vh;
+    padding-bottom: 16vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* .box_left {
+    height: auto;
+    text-align: center;
+    float: left;
+}
+
+.box_right {
+    height: auto;
+    max-width: 50%;
+    float: right;
+} */
+
+/* .apollo {
+    padding-top: 45%;
+    font-weight: bold;
+    font-size: 1000%;
+    text-shadow: 5px 5px 0px #5D9CD5;
+}
+
+.hms {
+    font-weight: bold;
+    position: relative;
+    font-size: 150%;
+    text-align: center;
+    margin-left: 27%;
+    margin-top: -7.5%;
+} */
+
+.navbar {
+    opacity: 0;
+    transform: translateY(-150%);
+    transition: opacity 2s, transform 2s;
+}
+
+.apollo {
+    width: 90%;
+    margin-top: 30%;
+    pointer-events: none;
+
+    opacity: 0;
+    transform: translate(-150%);
+    transition: opacity 2s, transform 2s;
+}
+
+.splash {
+    z-index: 999;
+    width: 105%;
+    margin-top: 6%;
+    /* position: fixed;
+    width: 34.5%; */
+
+    opacity: 0;
+    transform: translate(150%);
+    transition: opacity 2s, transform 2s;
+
+    pointer-events: none;
+}
+
+.slide_anim {
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+#bottom {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 1.5%;
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.nav_nopointer {
+    pointer-events: none;
+}
+
+
+
+
+
+/* @media screen and (max-width: 767.5px) {
+    .container {
+        transform: scale(0.5) !important;
+    }
+
+    .apollo {
+        margin-top: 0% !important;
+    }
+
+    body {
+        padding-top: 0vh !important;
+    }
+} */
+
+
+@media screen and (max-width: 767.5px) {
+    .container {
+        transform: scale(0.6);
+        transform-origin: top;
+    }
+}
+
+
+
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+    .container {
+        transform: scale(0.9) !important;
+    }
+
+    body {
+        padding-top: 5vh !important;
+    }
+
+    @media screen and (max-width: 767.5px) {
+        .container {
+            transform: scale(0.5) !important;
+            transform-origin: top;
+        }
+    }
+}
+
+
+
+
+
+
+@media screen and (-webkit-device-pixel-ratio: 1.50) {
+    .container {
+        transform: scale(0.7) !important;
+    }
+
+    body {
+        padding-top: 0vh !important;
+    }
+
+    @media screen and (max-width: 767.5px) {
+        .container {
+            transform: scale(0.5) !important;
+            transform-origin: top;
+        }
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.75) {
+    .container {
+        transform: scale(0.7) !important;
+    }
+
+    body {
+        padding-top: 0vh !important;
+    }
+
+    @media screen and (max-width: 767.5px) {
+        .container {
+            transform: scale(0.4) !important;
+            transform-origin: top;
+        }
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 2) and (max-width: 1440px) {
+    .container {
+        transform: scale(0.8) !important;
+    }
+
+    body {
+        padding-top: 7vh !important;
+    }
+
+    @media screen and (max-width: 767.5px) {
+        .container {
+            transform: scale(0.5) !important;
+            transform-origin: top;
+        }
+    }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 2) and (max-width: 1280px) {
+    .container {
+        transform: scale(0.7) !important;
+    }
+
+    body {
+        padding-top: 3vh !important;
+    }
+
+    @media screen and (max-width: 767.5px) {
+        .container {
+            transform: scale(0.5) !important;
+            transform-origin: top;
+        }
+    }
+}
+
+
+@media screen and (-webkit-max-device-pixel-ratio: 3) and (orientation: portrait) {
+    #bottom {
+        font-size: 7.5px;
+    }
+}
+
+@media screen and (-webkit-max-device-pixel-ratio: 2) and (orientation: portrait) {
+    #bottom {
+        font-size: 7.5px;
+    }
+}
+
+@media screen and (-webkit-max-device-pixel-ratio: 2.8125) and (orientation: portrait) {
+    #bottom {
+        font-size: 7.5px;
+    }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>apollo hospital</title>
+        <link rel="icon" type="image/x-icon" href="/static/resources/favicon.svg">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+
+        <link rel="preload" as="image" href="/static/resources/splash_nobg.svg" />
+        <link rel="preload" as="image" href="/static/resources/apollo2.svg" />
+        <link rel="preload" as="image" href="/static/resources/body9.svg" />
+
+    </head>
+    <body>
+        <div class="fluid-container fixed-top">
+            <nav style="margin-bottom: 1%; margin-top: 1%;" class="navbar navbar-expand justify-content-center">
+                    <a href="{{ url_for('views.home') }}" class="navbar-brand">
+                        <img id="home_icon" src="/static/resources/apollo_logo.svg" alt="">
+                    </a>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li style="margin-right: 30px;" class="nav-item">
+                        </li>
+                    </ul>
+    
+                    
+
+                    <ul class="navbar-nav ms-auto">
+                        <li style="margin-right: 30px;" class="nav-item">
+                            <a id="optionlink" href="{{ url_for('auth.sign_up') }}" class="nav-link">sign-up</a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a id="login_button" href="{{ url_for('auth.login') }}" class="nav-link">log in</a>
+                        </li>
+                    </ul>
+            </nav>
+        </div>
+
+        
+        <div class="container align-middle">
+            <div class="row">
+                <div class="col-md">
+                    <div class="box">
+                        <img class="apollo"src="/static/resources/apollo2.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="box">
+                        <img class="splash" src="/static/resources/splash_nobg.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bottom" class="fluid-container fixed-bottom">
+            <div style="float: left; text-align: left;">
+                <span>backend developed by <a style="color: black; font-weight: bold; text-decoration: underline;" target="_blank" href="https://www.instagram.com/jamesbaisus"> james baisus</a> <a target="_blank" href="https://www.instagram.com/jamesbaisus"><img style="width: 12px; margin-bottom: 3px;" src="/static/resources/instagram.svg" alt=""></a></span>
+                
+                <br>
+                    
+                <span>frontend developed by <a style="color: black; font-weight: bold; text-decoration: underline;" target="_blank" href="https://www.instagram.com/les.rx">les paul ranalan</a> <a target="_blank" href="https://www.instagram.com/les.rx"><img style="width: 12px; margin-bottom: 3px;" src="/static/resources/instagram.svg" alt=""></a></span>
+            </div>
+            
+            <div style="float: right; text-align: right;">
+                <span>vector illustration made by <a style="font-weight: bold; color: black; text-decoration: underline;" target="_blank" href="https://www.vecteezy.com/members/stupercrips">restu purwanto</a> <a target="_blank" href="https://www.vecteezy.com/members/stupercrips"><img style="width: 12px; margin-bottom: 3px;" src="/static/resources/vecteezy.svg" alt=""></a></span>
+
+                <br>
+
+                <span>logo made by <a href="mailto:gabrielcoruna808@gmail.com" style="font-weight: bold; text-decoration: underline; color: black;">gabriel coruña</a> <a href="mailto:gabrielcoruna808@gmail.com"><img style="width: 12px; margin-bottom: 3px;" src="/static/resources/envelope-at.svg" alt=""></a></span>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+<script>
+    window.onload = function() {
+    setTimeout(function() {
+        var nav = document.querySelector('.navbar');
+        var splash = document.querySelector('.splash');
+        var apollo = document.querySelector('.apollo');
+
+        nav.classList.add('slide_anim');
+        nav.classList.add('nav_nopointer');
+        splash.classList.add('slide_anim');
+        apollo.classList.add('slide_anim');
+
+        setTimeout(function() {
+            nav.classList.remove('nav_nopointer');
+        }, 2000);
+    }, 100);
+};
+</script> 
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
