@@ -15,7 +15,7 @@
 2. Install Python libraries by entering `pip install -r requirements.txt` in VSCODE terminal
 1. Install XAMPP and turn on SQL Server
 2. Go to localhost in web browser > phpMyAdmin > SQL console tab
-3. Paste the SQL query provided in the repository or at the last section of this README
+3. Copy and paste the SQL query provided in `DATABASE.txt` or at the last section of this README
 4. Run `main.py`
 5. Register and login. Note that doctor records will be populated from the get-go
 
