@@ -3,10 +3,18 @@
 
 &emsp;
 
+## DEMO
+You can view the app for testing here: https://apollohospital.pythonanywhere.com
+NOTE: you have to sign-up first and then login to test the app.
+
+
+&emsp;
+
 ## DEPENDENCIES
-1. XAMPP
-2. Python
-3. Python libraries mentioned in `requirements.txt`
+1. XAMPP (local database testing)
+2. mySQL (production deployment)
+3. Python
+4. Python libraries mentioned in `requirements.txt`
 
 &emsp;
 
