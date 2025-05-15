@@ -1,35 +1,37 @@
 # APOLLO HOSPITAL
+
 ![ImageApolloHospital1](https://github.com/shadowisf/ApolloHospital/assets/97739695/dc955834-1f30-47e6-bd72-a169a6c173f9)
 
 &emsp;
 
 ## DEMO
-You can view the app for testing here: https://apollohospital.pythonanywhere.com
-NOTE: you have to sign-up first and then login to test the app.
 
+You can view the app for testing here: https://apollohospital.pythonanywhere.com.
 
 &emsp;
 
 ## DEPENDENCIES
+
 1. XAMPP (local database testing)
-2. mySQL (production deployment)
-3. Python
-4. Python libraries mentioned in `requirements.txt`
+2. Python
+3. Python libraries mentioned in `requirements.txt`
 
 &emsp;
 
 ## SETUP
-1. Clone and open this repository in VSCODE
-2. Install Python libraries by entering `pip install -r requirements.txt` in VSCODE terminal
-1. Install XAMPP and turn on SQL Server
-2. Go to localhost in web browser > phpMyAdmin > SQL console tab
-3. Copy and paste the SQL query provided in `DATABASE.txt` or at the last section of this README
-4. Run `main.py`
-5. Register and login. Note that doctor records will be populated from the get-go
+
+1. Clone and open this repository in VSCODE.
+2. Optional: Create a Python virtual environment.
+3. Run `pip install -r requirements.txt`.
+4. Open XAMPP and turn on SQL Server
+5. Go to localhost in web browser > phpMyAdmin > SQL console tab.
+6. Copy and paste the SQL query provided in `DATABASE.txt` or at the last section of this README.
+7. Run `python main.py`.
 
 &emsp;
 
 ## SQL
+
 ```
 CREATE DATABASE apollo_hms;
 
@@ -70,7 +72,7 @@ CREATE TABLE patient (
     address VARCHAR(255),
     gender ENUM('Male', 'Female', 'Other'),
     email VARCHAR(100) NOT NULL CHECK (CHAR_LENGTH(email) > 0),
-    
+
     UNIQUE (fullname),
     UNIQUE (phone),
     UNIQUE (email)
@@ -84,7 +86,7 @@ CREATE TABLE doctors (
     specialty VARCHAR(100) NOT NULL,
     availability JSON,
     availability_start_time TIME NOT NULL,
-    availability_end_time TIME NOT NULL			
+    availability_end_time TIME NOT NULL
 );
 
 CREATE TABLE appointments (
